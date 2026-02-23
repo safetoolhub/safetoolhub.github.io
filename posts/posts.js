@@ -4,6 +4,30 @@
 
 const BLOG_POSTS = [
   {
+    slug: "003-innerpix-lab",
+    date: "2026-02-23",
+    date_display: {
+      en: "February 23, 2026",
+      es: "23 de febrero de 2026"
+    },
+    tag: {
+      en: "Tools",
+      es: "Herramientas"
+    },
+    title: {
+      en: "Innerpix Lab: Our First Available Application",
+      es: "Innerpix Lab: primera aplicaci\u00f3n disponible"
+    },
+    description: {
+      en: "Innerpix Lab is here: a free, open-source photo and video management studio that runs entirely on your device. Clean up duplicates, organize by date, find visually similar images\u2014without uploading a single file.",
+      es: "Innerpix Lab ya est\u00e1 disponible: un estudio gratuito y de c\u00f3digo abierto para gestionar fotos y v\u00eddeos que funciona completamente en tu dispositivo. Limpia duplicados, organiza por fecha, busca im\u00e1genes similares\u2014sin subir ni un solo archivo."
+    },
+    author: {
+      en: "By SafeToolHub",
+      es: "Por SafeToolHub"
+    }
+  },
+  {
     slug: "002-jaime-gomez-obregon",
     date: "2026-02-22",
     date_display: {
@@ -39,12 +63,12 @@ const BLOG_POSTS = [
       es: "Filosof\u00eda"
     },
     title: {
-      en: "Why Local Processing and Privacy Matter",
-      es: "Por qu\u00e9 el procesamiento local y la privacidad importan"
+      en: "The Birth of SafeToolHub: Why Privacy-First Software Matters",
+      es: "Nacimiento de SafeToolHub: por qu\u00e9 el software respetuoso con la privacidad importa"
     },
     description: {
-      en: "At SafeToolHub, our core conviction is that privacy is an irreplaceable right. In a world that moves too fast, we believe it\u2019s worth pausing to ask: are the tools we use really the best choice for us?",
-      es: "En SafeToolHub, nuestra convicci\u00f3n fundamental es que la privacidad es un derecho insustituible. En un mundo que avanza demasiado r\u00e1pido, creemos que merece la pena detenerse a preguntar: \u00bflas herramientas que usamos son realmente las m\u00e1s adecuadas para nosotros?"
+      en: "SafeToolHub is born. A personal project by people with 20+ years in tech, dedicated to building free, open-source tools that run locally and respect your privacy above all else.",
+      es: "Nace SafeToolHub. Un proyecto personal desarrollado por personas con m\u00e1s de 20 a\u00f1os en la industria tecnol\u00f3gica, dedicado a crear herramientas libres y de c\u00f3digo abierto que funcionan localmente y respetan tu privacidad."
     },
     author: {
       en: "By SafeToolHub",

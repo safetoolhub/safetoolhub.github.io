@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Innerpix Lab: Our First Available Application — SafeToolHub Blog</title>
+  <meta name="description"
+    content="Innerpix Lab is here: a free, open-source photo and video management studio that runs entirely on your device. No uploads, no cloud, no telemetry.">
+  <meta name="author" content="SafeToolHub">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/safetoolhub-icon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('sth-theme');
+      if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/img/safetoolhub-icon.svg" alt="SafeToolHub" class="nav-logo-img">
+        <span>SafeToolHub</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#tools" data-i18n="nav-tools">Our Tools</a>
+        <a href="../index.html#about" data-i18n="nav-about">About</a>
+        <a href="../blog.html" data-i18n="nav-blog">Blog</a>
+        <div class="nav-controls">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+          <div class="lang-switch">
+            <a href="#" data-switch-lang="en">EN</a>
+            <a href="#" data-switch-lang="es">ES</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Article -->
+  <main class="post-reader">
+    <div class="container container-sm">
+      <a href="../blog.html" class="back-link">&larr; <span data-i18n="post-back">Back to Blog</span></a>
+
+      <header class="post-header">
+        <div class="post-tags">
+          <span class="badge" data-lang="en">Tools</span>
+          <span class="badge" data-lang="es">Herramientas</span>
+        </div>
+        <h1 data-lang="en">Innerpix Lab: Our First Available Application</h1>
+        <h1 data-lang="es">Innerpix Lab: primera aplicación disponible</h1>
+        <div class="post-meta">
+          <span data-lang="en">February 23, 2026 &bull; By SafeToolHub</span>
+          <span data-lang="es">23 de febrero de 2026 &bull; Por SafeToolHub</span>
+        </div>
+      </header>
+
+      <article class="post-content">
+
+        <!-- ═══════════ ENGLISH ═══════════ -->
+        <div data-lang="en">
+          <p>Innerpix Lab is the first available application from SafeToolHub. It was born from a real need: managing
+            thousands of personal photos and videos without having to upload them to any cloud service.</p>
+
+          <p>Over the years, we accumulate enormous collections of images across different devices: phone photos,
+            backups, duplicates we didn't even know we had. Innerpix Lab solves this problem entirely locally, without
+            sending a single file to any server.</p>
+
+          <p>Here is what it can do:</p>
+          <ul class="features-list" style="margin-bottom: 2rem;">
+            <li>Exact and perceptual hash duplicate detection</li>
+            <li>HEIC/JPG and Live Photo cleanup</li>
+            <li>Smart date-based organization and automatic renaming</li>
+            <li>Visually similar image search</li>
+            <li>Available for Linux, Windows, and macOS</li>
+          </ul>
+
+          <p>It is free software, open-source under the GPLv3 license. You can download it, study it, modify it, and
+            distribute it. No ads, no subscriptions, no telemetry. Our applications don't even include the networking
+            libraries capable of making outgoing requests—your data never leaves your machine.</p>
+
+          <p>Innerpix Lab is currently in alpha (v0.8.6). You can download it from
+            <a href="https://github.com/safetoolhub/innerpix-lab/releases" target="_blank" rel="noopener">GitHub
+              Releases</a> and try it out. If you find a bug or have a suggestion, please open an issue on the
+            repository. Your feedback is essential for keeping it improving.</p>
+        </div>
+
+        <!-- ═══════════ ESPAÑOL ═══════════ -->
+        <div data-lang="es">
+          <p>Innerpix Lab es la primera aplicación disponible de SafeToolHub. Nació de una necesidad real: gestionar
+            miles de fotos y vídeos personales sin tener que subirlos a ningún servicio en la nube.</p>
+
+          <p>Con los años acumulamos colecciones enormes de imágenes en distintos dispositivos: fotos del móvil,
+            backups, duplicados que ni siquiera sabíamos que teníamos. Innerpix Lab resuelve este problema de forma
+            completamente local, sin enviar ni un solo fichero a ningún servidor.</p>
+
+          <p>Esto es lo que puede hacer:</p>
+          <ul class="features-list" style="margin-bottom: 2rem;">
+            <li>Detección de duplicados exactos y archivos similares</li>
+            <li>Limpieza de fotos HEIC/JPG y Live Photos de iPhone</li>
+            <li>Organización inteligente por fechas y renombrado automático</li>
+            <li>Búsqueda de imágenes visualmente similares</li>
+            <li>Disponible para Linux, Windows y macOS</li>
+          </ul>
+
+          <p>Es software libre, de código abierto bajo la licencia GPLv3. Puedes descargarlo, estudiarlo, modificarlo y
+            distribuirlo. Sin anuncios, sin suscripciones, sin telemetría. No se conecta a Internet. 
+            Tus datos nunca salen de tu máquina.</p>
+
+          <p>Innerpix Lab se encuentra actualmente en fase beta (v0.9-beta). Puedes descargarlo desde
+            <a href="https://github.com/safetoolhub/innerpix-lab/releases" target="_blank"
+              rel="noopener">GitHub Releases</a> y probarlo. Si encuentras algún bug o tienes alguna sugerencia, abre
+            una issue en el repositorio. Tu feedback es esencial para seguir mejorándolo.</p>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>SafeToolHub</h4>
+          <p data-i18n="footer-main-desc">Free and open-source software for everyone.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer-tools-title">Tools</h4>
+          <a href="../index.html#tools" data-i18n="tools-i-title">Innerpix Lab</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer-links-title">Links</h4>
+          <a href="https://github.com/safetoolhub" data-i18n="footer-links-org">GitHub Organization</a>
+          <a href="https://github.com/safetoolhub/innerpix-lab" data-i18n="footer-links-repo">Innerpix Repo</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer-rights">SafeToolHub — Free and open-source software (GPLv3).</p>
+        <p class="license-info" data-i18n="footer-license" data-i18n-html>
+          Licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU General Public
+            License v3 (GPLv3)</a>. You are free to use, study, modify, and share this software.
+          Source code available on <a href="https://github.com/safetoolhub" target="_blank">GitHub</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/i18n.js"></script>
+</body>
+
+</html>
