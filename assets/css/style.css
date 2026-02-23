@@ -562,6 +562,11 @@ a:hover {
   gap: 0.75rem;
 }
 
+/* ── Language Content Visibility ────────────────────────────────────────── */
+[data-lang]:not(.lang-active) {
+  display: none !important;
+}
+
 /* ── Blog Article Page ─────────────────────────────────────────────────── */
 .post-reader {
   padding: 10rem 0 5rem;

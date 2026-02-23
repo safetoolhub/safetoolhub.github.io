@@ -10,11 +10,11 @@ const translations = {
     "nav-blog": "Blog",
 
     // Hero
-    "hero-badge": "Open-Source & Privacy-First",
-    "hero-title-1": "Your privacy, your tools",
-    "hero-title-2": "Secure, private and free",
-    "hero-subtitle": "We build open-source, privacy-respecting software for everyone. Everything runs locally on your machine. <strong>No cloud, no telemetry, no tracking. Free as in freedom.</strong>",
-    "hero-btn": "Explore Our Tools",
+    "hero-badge": "Free Software · Real Privacy",
+    "hero-title-1": "Tools that respect your freedom",
+    "hero-title-2": "Private, free and for everyone",
+    "hero-subtitle": "Open-source software that runs 100% on your device. No cloud, no tracking, no telemetry. <strong>Built for people. Free as in freedom.</strong>",
+    "hero-btn": "Discover Our Tools",
 
     // Tools Section
     "tools-title": "Available Applications",
@@ -78,11 +78,11 @@ const translations = {
     "nav-blog": "Blog",
 
     // Hero
-    "hero-badge": "Software Libre y Privacidad",
-    "hero-title-1": "Tu privacidad, tus herramientas",
-    "hero-title-2": "Seguras, privadas y libres",
-    "hero-subtitle": "Creamos software de c\u00f3digo abierto que respeta tu privacidad, para todos. Todo se ejecuta localmente en tu m\u00e1quina. <strong>Sin nube, sin telemetr\u00eda, sin rastreo. Libre como en libertad.</strong>",
-    "hero-btn": "Explorar Herramientas",
+    "hero-badge": "Software Libre · Privacidad Real",
+    "hero-title-1": "Herramientas que respetan tu libertad",
+    "hero-title-2": "Privadas, libres y para todos",
+    "hero-subtitle": "Software de c\u00f3digo abierto que funciona al 100% en tu dispositivo. Sin nube, sin rastreo, sin telemetr\u00eda. <strong>Creado para las personas. Libre como en libertad.</strong>",
+    "hero-btn": "Descubrir Herramientas",
 
     // Herramientas
     "tools-title": "Aplicaciones Disponibles",
@@ -178,9 +178,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update active state in language switch
     document.querySelectorAll(".lang-switch a").forEach(el => {
       el.classList.remove("active");
-      if (el.getAttribute("data-lang") === lang) {
+      if (el.getAttribute("data-switch-lang") === lang) {
         el.classList.add("active");
       }
+    });
+
+    // Show/hide data-lang content blocks
+    document.querySelectorAll("[data-lang]").forEach(el => {
+      el.classList.toggle("lang-active", el.getAttribute("data-lang") === lang);
     });
 
     // Render blog cards if containers exist
@@ -194,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".lang-switch a").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      const newLang = e.target.getAttribute("data-lang");
+      const newLang = e.target.getAttribute("data-switch-lang");
       localStorage.setItem("safetoolhub_lang", newLang);
       currentLang = newLang;
       applyLanguage(newLang);

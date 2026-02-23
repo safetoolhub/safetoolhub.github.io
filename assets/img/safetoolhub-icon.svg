@@ -1,21 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
+    <!-- Background gradient -->
     <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#4f46e5"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
+      <stop offset="45%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
     </linearGradient>
+
+    <!-- Luminous center glow -->
+    <radialGradient id="luminous" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#818cf8" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+
+    <!-- Top-left highlight for depth -->
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="60%" y2="60%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Glow filter for shield and wrench -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft outer glow for the shield -->
+    <filter id="shield-glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
+
   <!-- Rounded square background -->
   <rect width="512" height="512" rx="96" fill="url(#bg)"/>
-  <!-- Shield shape -->
-  <path d="M256 72 L400 140 L400 280 Q400 380 256 440 Q112 380 112 280 L112 140 Z"
-        fill="white" fill-opacity="0.15" stroke="white" stroke-width="8"/>
-  <!-- Lock body -->
-  <rect x="216" y="252" width="80" height="68" rx="10" fill="white"/>
-  <!-- Lock shackle -->
-  <path d="M228 252 L228 220 Q228 188 256 188 Q284 188 284 220 L284 252"
-        fill="none" stroke="white" stroke-width="14" stroke-linecap="round"/>
-  <!-- Keyhole -->
-  <circle cx="256" cy="280" r="10" fill="#4f46e5"/>
-  <rect x="252" y="286" width="8" height="16" rx="3" fill="#4f46e5"/>
+
+  <!-- Luminous overlay -->
+  <rect width="512" height="512" rx="96" fill="url(#luminous)"/>
+
+  <!-- Subtle highlight -->
+  <rect width="512" height="512" rx="96" fill="url(#highlight)"/>
+
+  <!-- Shield outline with glow -->
+  <path d="M256 80 L392 144 V272 Q392 376 256 440 Q120 376 120 272 V144 Z"
+        fill="white" fill-opacity="0.1"
+        stroke="white" stroke-width="6" stroke-linejoin="round"
+        filter="url(#shield-glow)"/>
+
+  <!-- Wrench icon (Material Design "build" icon, scaled and centered) -->
+  <g transform="translate(166, 170) scale(7.5)" filter="url(#glow)">
+    <path d="M22.7,19 L13.6,9.9 C14.5,7.6 14,4.9 12.1,3
+             C10.1,1 7.1,0.6 4.7,1.7 L9,6 L6,9 L1.6,4.7
+             C0.4,7.1 0.9,10.1 2.9,12.1 C4.8,14 7.5,14.5 9.8,13.6
+             L18.9,22.7 C19.3,23.1 19.9,23.1 20.3,22.7
+             L22.6,20.4 C23.1,20 23.1,19.3 22.7,19 Z"
+          fill="white" opacity="0.95"/>
+  </g>
 </svg>
