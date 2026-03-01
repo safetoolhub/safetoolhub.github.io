@@ -33,7 +33,6 @@ const translations = {
     "tools-v-f1": "Lossless cutting and trimming",
     "tools-v-f2": "Format conversion without quality loss",
     "tools-v-f3": "Hardware-accelerated encoding",
-    "tools-v-f4": "Hardware-level privacy architecture",
     "tools-v-btn": "Not Yet Available",
 
     // Blog Section
@@ -102,7 +101,6 @@ const translations = {
     "tools-v-f1": "Recortes de v\u00eddeo sin p\u00e9rdida",
     "tools-v-f2": "Conversi\u00f3n de formatos sin p\u00e9rdida de calidad",
     "tools-v-f3": "Codificaci\u00f3n acelerada por hardware",
-    "tools-v-f4": "Arquitectura basada en hardware y privacidad",
     "tools-v-btn": "A\u00fan no disponible",
 
     // Blog
@@ -301,6 +299,8 @@ document.addEventListener("DOMContentLoaded", () => {
           'dl-deb': a => /\.deb$/i.test(a.name),
           'dl-rpm': a => /\.rpm$/i.test(a.name),
           'dl-mac': a => /\.dmg$/i.test(a.name),
+          'dl-appimage': a => /\.AppImage$/i.test(a.name),
+          'dl-flatpak': a => /\.flatpak$/i.test(a.name),
         };
 
         for (const [id, matcher] of Object.entries(mapping)) {
