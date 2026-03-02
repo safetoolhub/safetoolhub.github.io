@@ -44,7 +44,7 @@ const BLOG_POSTS = [
     },
     description: {
       en: "We explore the figure of Jaime G\u00f3mez-Obreg\u00f3n, whose work in digital transformation and civic technology demonstrates that the best technology is the one that empowers people and organizations.",
-      es: "Exploramos la figura de Jaime G\u00f3mez-Obreg\u00f3n, cuyo trabajo en transformaci\u00f3n digital y tecnolog\u00eda c\u00edvica demuestra que la mejor tecnolog\u00eda es la que empodera a las personas y las organizaciones."
+      es: "Exploramos la figura de Jaime G\u00f3mez-Obreg\u00f3n, cuyo trabajo en transformaci\u00f3n digital y tecnolog\u00eda c\u00edvica demuestra que la mejor tecnolog\u00eda es la que ayuda a las personas y las organizaciones."
     },
     author: {
       en: "By SafeToolHub",
