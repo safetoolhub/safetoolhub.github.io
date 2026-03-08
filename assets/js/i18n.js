@@ -54,6 +54,7 @@ const translations = {
     "donate-desc": "We build our tools to be free, open-source, and completely private because we believe that\u2019s how software should be. If you find value in our work, consider supporting our development so we can keep creating tools that respect your freedom.",
     "donate-btn-gh": "GitHub Sponsors",
     "donate-coming-soon": "Coming soon",
+    "donate-or": "or",
 
     // Footer
     "footer-main-desc": "Free and open-source software for everyone.",
@@ -62,6 +63,7 @@ const translations = {
     "footer-links-org": "GitHub Organization",
     "footer-links-innerpix": "Innerpix Repo",
     "footer-links-pdftrim": "PDFTrim Repo",
+    "footer-links-paypal": "Donate",
     "footer-rights": "SafeToolHub \u2014 Free and open-source software (GPLv3).",
     "footer-license": "Licensed under the <a href='https://www.gnu.org/licenses/gpl-3.0.html' target='_blank'>GNU General Public License v3 (GPLv3)</a>. You are free to use, study, modify, and share this software. Derivative works must include proper attribution and be licensed under GPLv3. Source code available on <a href='https://github.com/safetoolhub' target='_blank'>GitHub</a>.",
 
@@ -124,6 +126,7 @@ const translations = {
     "donate-desc": "Desarrollamos nuestras herramientas para que sean libres, de c\u00f3digo abierto y completamente privadas porque creemos que as\u00ed debe ser el software. Si encuentras valor en nuestro trabajo, considera apoyar nuestro desarrollo para que podamos seguir creando herramientas que respeten tu libertad.",
     "donate-btn-gh": "GitHub Sponsors",
     "donate-coming-soon": "Pr\u00f3ximamente",
+    "donate-or": "o",
 
     // Pie de p\u00e1gina
     "footer-main-desc": "Software libre y de c\u00f3digo abierto para todos.",
@@ -132,6 +135,7 @@ const translations = {
     "footer-links-org": "Organizaci\u00f3n en GitHub",
     "footer-links-innerpix": "Repo de Innerpix",
     "footer-links-pdftrim": "Repo de PDFTrim",
+    "footer-links-paypal": "Donar",
     "footer-rights": "SafeToolHub \u2014 Software libre y de c\u00f3digo abierto (GPLv3).",
     "footer-license": "Licenciado bajo la <a href='https://www.gnu.org/licenses/gpl-3.0.html' target='_blank'>Licencia P\u00fablica General v3 de GNU (GPLv3)</a>. Eres libre de usar, estudiar, modificar y compartir este software. Las obras derivadas deben incluir atribuci\u00f3n adecuada y estar licenciadas bajo GPLv3. C\u00f3digo fuente disponible en <a href='https://github.com/safetoolhub' target='_blank'>GitHub</a>.",
 

@@ -783,6 +783,37 @@ a:hover {
   font-style: italic;
 }
 
+.donate-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.donate-sep {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  padding: 0 0.25rem;
+}
+
+.paypal-form {
+  display: flex;
+  align-items: center;
+}
+
+.paypal-btn-img {
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 112, 186, 0.2);
+}
+
+.paypal-btn-img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 112, 186, 0.38);
+}
+
 /* ── Footer ────────────────────────────────────────────────────────────── */
 footer {
   border-top: 1px solid var(--border);
