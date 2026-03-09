@@ -60,7 +60,7 @@ python -m http.server 8000
 
 ## Our Projects
 
-- **[Innerpix Lab](https://github.com/safetoolhub/innerpix-lab)** — Privacy-first photo & video management
+- **[SafeTool Pix](https://github.com/safetoolhub/safetool-pix)** — Privacy-first photo & video management
 - More coming soon...
 
 ## License

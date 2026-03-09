@@ -19,13 +19,13 @@ const translations = {
     // Tools Section
     "tools-title": "Available Applications",
     "tools-desc": "Discover our suite of open-source software designed with privacy and transparency as the main pillars.",
-    "tools-i-title": "Innerpix Lab",
+    "tools-i-title": "SafeTool Pix",
     "tools-i-desc": "The ultimate privacy-first photo and video management studio. Clean duplicates, organize them in folders, and find visually similar media. Free and open-source.",
     "tools-i-f1": "Exact & Perceptual Hash Duplicate Detection",
     "tools-i-f2": "HEIC/JPG and Live Photo Cleanup",
     "tools-i-f3": "Smart Date Organization & Renaming",
     "tools-i-f4": "Available for Linux, Windows, and macOS",
-    "tools-i-btn": "Download Innerpix Lab",
+    "tools-i-btn": "Download SafeTool Pix",
     "tools-i-all-releases": "All releases on GitHub \u2192",
     "tools-p-badge": "v0.1.0-beta",
     "tools-p-title": "SafeTool PDF",
@@ -61,8 +61,8 @@ const translations = {
     "footer-tools-title": "Tools",
     "footer-links-title": "Links",
     "footer-links-org": "GitHub Organization",
-    "footer-links-innerpix": "Innerpix Repo",
-    "footer-links-pdftrim": "SafeTool PDF Repo",
+    "footer-links-safetoolpix": "SafeTool Pix Repo",
+    "footer-links-safetoolpdf": "SafeTool PDF Repo",
     "footer-links-paypal": "Donate",
     "footer-rights": "SafeToolHub \u2014 Free and open-source software (GPLv3).",
     "footer-license": "Licensed under the <a href='https://www.gnu.org/licenses/gpl-3.0.html' target='_blank'>GNU General Public License v3 (GPLv3)</a>. You are free to use, study, modify, and share this software. Derivative works must include proper attribution and be licensed under GPLv3. Source code available on <a href='https://github.com/safetoolhub' target='_blank'>GitHub</a>.",
@@ -91,13 +91,13 @@ const translations = {
     // Herramientas
     "tools-title": "Aplicaciones Disponibles",
     "tools-desc": "Descubre nuestra suite de software de c\u00f3digo abierto dise\u00f1ada con la privacidad y la transparencia como pilares principales.",
-    "tools-i-title": "Innerpix Lab",
+    "tools-i-title": "SafeTool Pix",
     "tools-i-desc": "El estudio definitivo para gestionar fotos y v\u00eddeos sin comprometer la privacidad. Limpia duplicados, org\u00e1nizalos en carpetas y encuentra similitudes visuales. Libre y de c\u00f3digo abierto.",
     "tools-i-f1": "Detecci\u00f3n de duplicados exactos y por hash perceptual",
     "tools-i-f2": "Limpieza de HEIC/JPG y Live Photos",
     "tools-i-f3": "Organizaci\u00f3n inteligente por fechas y renombrado",
     "tools-i-f4": "Disponible para Linux, Windows y macOS",
-    "tools-i-btn": "Descargar Innerpix Lab",
+    "tools-i-btn": "Descargar SafeTool Pix",
     "tools-i-all-releases": "Todas las versiones en GitHub \u2192",
     "tools-p-badge": "v0.1.0-beta",
     "tools-p-title": "SafeTool PDF",
@@ -133,8 +133,8 @@ const translations = {
     "footer-tools-title": "Herramientas",
     "footer-links-title": "Enlaces",
     "footer-links-org": "Organizaci\u00f3n en GitHub",
-    "footer-links-innerpix": "Repo de Innerpix",
-    "footer-links-pdftrim": "Repo de SafeTool PDF",
+    "footer-links-safetoolpix": "Repo de SafeTool Pix",
+    "footer-links-safetoolpdf": "Repo de SafeTool PDF",
     "footer-links-paypal": "Donar",
     "footer-rights": "SafeToolHub \u2014 Software libre y de c\u00f3digo abierto (GPLv3).",
     "footer-license": "Licenciado bajo la <a href='https://www.gnu.org/licenses/gpl-3.0.html' target='_blank'>Licencia P\u00fablica General v3 de GNU (GPLv3)</a>. Eres libre de usar, estudiar, modificar y compartir este software. Las obras derivadas deben incluir atribuci\u00f3n adecuada y estar licenciadas bajo GPLv3. C\u00f3digo fuente disponible en <a href='https://github.com/safetoolhub' target='_blank'>GitHub</a>.",
@@ -266,11 +266,11 @@ function renderBlogCards(lang) {
 }
 
 // \u2500\u2500\u2500 GitHub Release Auto-Fetch \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
-// Fetches the latest Innerpix Lab release from GitHub API,
+// Fetches the latest SafeTool Pix release from GitHub API,
 // updates the version badge and sets direct download links per platform.
 
 document.addEventListener("DOMContentLoaded", () => {
-  const REPO = 'safetoolhub/innerpix-lab';
+  const REPO = 'safetoolhub/safetool-pix';
   const API_URL = `https://api.github.com/repos/${REPO}/releases/latest`;
 
   // Detect user OS and highlight the recommended download button
@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(release => {
         // Update version badge
-        const badge = document.getElementById('innerpix-version');
+        const badge = document.getElementById('safetoolpix-version');
         if (badge && release.tag_name) {
           const version = release.tag_name.replace(/^v/, '');
           badge.textContent = `v${version}`;

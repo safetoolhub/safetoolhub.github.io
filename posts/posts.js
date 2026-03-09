@@ -4,7 +4,7 @@
 
 const BLOG_POSTS = [
   {
-    slug: "003-innerpix-lab",
+    slug: "003-safetool-pix",
     date: "2026-02-23",
     date_display: {
       en: "February 23, 2026",
@@ -15,12 +15,12 @@ const BLOG_POSTS = [
       es: "Herramientas"
     },
     title: {
-      en: "Innerpix Lab: Our First Available Application",
-      es: "Innerpix Lab: primera aplicaci\u00f3n disponible"
+      en: "SafeTool Pix: Our First Available Application",
+      es: "SafeTool Pix: primera aplicaci\u00f3n disponible"
     },
     description: {
-      en: "Innerpix Lab is here: a free, open-source photo and video management studio that runs entirely on your device. Clean up duplicates, organize by date, find visually similar images\u2014without uploading a single file.",
-      es: "Innerpix Lab ya est\u00e1 disponible: un estudio gratuito y de c\u00f3digo abierto para gestionar fotos y v\u00eddeos que funciona completamente en tu dispositivo. Limpia duplicados, organiza por fecha, busca im\u00e1genes similares\u2014sin subir ni un solo archivo."
+      en: "SafeTool Pix is here: a free, open-source photo and video management studio that runs entirely on your device. Clean up duplicates, organize by date, find visually similar images\u2014without uploading a single file.",
+      es: "SafeTool Pix ya est\u00e1 disponible: un estudio gratuito y de c\u00f3digo abierto para gestionar fotos y v\u00eddeos que funciona completamente en tu dispositivo. Limpia duplicados, organiza por fecha, busca im\u00e1genes similares\u2014sin subir ni un solo archivo."
     },
     author: {
       en: "By SafeToolHub",
