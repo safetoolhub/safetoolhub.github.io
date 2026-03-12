@@ -4,6 +4,30 @@
 
 const BLOG_POSTS = [
   {
+    slug: "004-safetool-pdf",
+    date: "2026-03-13",
+    date_display: {
+      en: "March 13, 2026",
+      es: "13 de marzo de 2026"
+    },
+    tag: {
+      en: "Tools",
+      es: "Herramientas"
+    },
+    title: {
+      en: "Introducing SafeTool PDF: Your Private PDF Suite",
+      es: "Presentamos SafeTool PDF: tu suite de PDFs privada"
+    },
+    description: {
+      en: "SafeTool PDF is here: a free, open-source PDF toolkit that runs entirely on your device. Optimize, merge, strip metadata, and remove passwords \u2014 with zero uploads and zero telemetry.",
+      es: "SafeTool PDF ya est\u00e1 aqu\u00ed: una suite de herramientas PDF gratuita y de c\u00f3digo abierto que funciona completamente en tu dispositivo. Optimiza, combina, elimina metadatos y quita contrase\u00f1as \u2014 sin subir nada y sin telemetr\u00eda."
+    },
+    author: {
+      en: "By SafeToolHub",
+      es: "Por SafeToolHub"
+    }
+  },
+  {
     slug: "003-safetool-pix",
     date: "2026-02-23",
     date_display: {
