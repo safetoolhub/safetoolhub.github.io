@@ -111,6 +111,7 @@ const translations = {
     "tools-p-f5": "Procesamiento 100% local y privado",
     "tools-p-btn": "Descargar SafeTool PDF",
     "tools-p-coming": "Próximamente",
+    "tools-p-all-releases": "Todas las versiones en GitHub \u2192",
 
     // Blog
     "blog-title": "Nuestro Blog",
