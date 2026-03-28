@@ -20,11 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
             downloadVersion.textContent = version;
         }
 
-        // Apply pre-selected OS based on UserAgent
+        // Apply pre-selected OS based on UserAgent + platform
         const ua = (navigator.userAgent || '').toLowerCase();
+        const platform = (navigator.platform || '').toLowerCase();
         let detectOS = "win";
-        if (/mac|iphone|ipad/.test(ua)) detectOS = "mac";
-        else if (/linux/.test(ua)) detectOS = "lin";
+        if (/macintosh|mac os x|iphone|ipad/.test(ua) || /mac/.test(platform)) detectOS = "mac";
+        else if (/linux/.test(ua) && !/android/.test(ua) || /linux/.test(platform)) detectOS = "lin";
         
         switchTab(detectOS);
         modal.classList.add("modal-open");
