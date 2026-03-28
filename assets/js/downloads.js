@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // For Windows and Mac, there's usually just one primary link. 
         // The modal could just fetch the link from a hidden element that GitHub API populates.
         let targetSelector = "";
-        if (currentOS === "win") targetSelector = ".hidden-links #dl-win, .hidden-links #pdftrim-dl-win";
-        else if (currentOS === "mac") targetSelector = ".hidden-links #dl-mac, .hidden-links #pdftrim-dl-mac";
-        else if (currentOS === "lin") targetSelector = ".hidden-links #" + currentLinuxFormat +", .hidden-links #pdftrim-" + currentLinuxFormat;
+        if (currentOS === "win") targetSelector = ".hidden-links #dl-win, .hidden-links #pdftrim-dl-win, .hidden-links #downloader-dl-win";
+        else if (currentOS === "mac") targetSelector = ".hidden-links #dl-mac, .hidden-links #pdftrim-dl-mac, .hidden-links #downloader-dl-mac";
+        else if (currentOS === "lin") targetSelector = ".hidden-links #" + currentLinuxFormat +", .hidden-links #pdftrim-" + currentLinuxFormat + ", .hidden-links #downloader-" + currentLinuxFormat;
 
         const linkElement = appCard.querySelector(targetSelector);
         

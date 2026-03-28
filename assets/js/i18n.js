@@ -27,7 +27,7 @@ const translations = {
     "tools-i-f4": "Available for Linux, Windows, and macOS",
     "tools-i-btn": "Download SafeTool Pix",
     "tools-i-all-releases": "All releases on GitHub \u2192",
-    "tools-p-badge": "v0.1.0-beta",
+    "tools-p-badge": "v0.2.0-BETA",
     "tools-p-title": "SafeTool PDF",
     "tools-p-desc": "A powerful suite of PDF tools that runs 100% on your device. Optimize, merge, clean, and unlock your PDFs — with zero uploads and zero telemetry.",
     "tools-p-f1": "PDF optimization (size reduction)",
@@ -37,6 +37,16 @@ const translations = {
     "tools-p-f5": "100% local and private processing",
     "tools-p-btn": "Download SafeTool PDF",
     "tools-p-coming": "Coming Soon",
+    "tools-p-all-releases": "All releases on GitHub \u2192",
+    "tools-d-badge": "v0..0-BETA",
+    "tools-d-title": "SafeTool Downloader",
+    "tools-d-desc": "A privacy-respecting file downloader. Download from any website 100% locally with zero tracking or telemetry.",
+    "tools-d-f1": "Download files from any website",
+    "tools-d-f2": "Queue and manage multiple downloads",
+    "tools-d-f3": "100% local processing, zero tracking",
+    "tools-d-f4": "Available for Linux, Windows, and macOS",
+    "tools-d-btn": "Download SafeTool Downloader",
+    "tools-d-all-releases": "All releases on GitHub \u2192",
 
     // Modal
     "modal-title": "Download Options",
@@ -83,6 +93,7 @@ const translations = {
     "footer-links-org": "GitHub Organization",
     "footer-links-safetoolpix": "SafeTool Pix Repo",
     "footer-links-safetoolpdf": "SafeTool PDF Repo",
+    "footer-links-safetooldownloader": "SafeTool Downloader Repo",
     "footer-links-paypal": "Donate",
     "footer-rights": "SafeToolHub \u2014 Free and open-source software (GPLv3).",
     "footer-license": "Licensed under the <a href='https://www.gnu.org/licenses/gpl-3.0.html' target='_blank'>GNU General Public License v3 (GPLv3)</a>. You are free to use, study, modify, and share this software. Derivative works must include proper attribution and be licensed under GPLv3. Source code available on <a href='https://github.com/safetoolhub' target='_blank'>GitHub</a>.",
@@ -119,7 +130,7 @@ const translations = {
     "tools-i-f4": "Disponible para Linux, Windows y macOS",
     "tools-i-btn": "Descargar SafeTool Pix",
     "tools-i-all-releases": "Todas las versiones en GitHub \u2192",
-    "tools-p-badge": "v0.1.0-beta",
+    "tools-p-badge": "v0.2.0-BETA",
     "tools-p-title": "SafeTool PDF",
     "tools-p-desc": "Una suite de herramientas PDF potente que funciona al 100% en tu dispositivo. Optimiza, combina, limpia y desbloquea tus PDFs — sin subir nada y sin telemetría.",
     "tools-p-f1": "Optimización de PDFs (reducción de tamaño)",
@@ -130,6 +141,15 @@ const translations = {
     "tools-p-btn": "Descargar SafeTool PDF",
     "tools-p-coming": "Próximamente",
     "tools-p-all-releases": "Todas las versiones en GitHub \u2192",
+    "tools-d-badge": "v0.1.0-BETA",
+    "tools-d-title": "SafeTool Downloader",
+    "tools-d-desc": "Un descargador de archivos que respeta tu privacidad. Descarga desde cualquier web de forma 100% local sin rastreo ni telemetría.",
+    "tools-d-f1": "Descarga archivos de cualquier web",
+    "tools-d-f2": "Añade a la cola y gestiona múltiples descargas",
+    "tools-d-f3": "Procesamiento 100% local, sin rastreo",
+    "tools-d-f4": "Disponible para Linux, Windows y macOS",
+    "tools-d-btn": "Descargar SafeTool Downloader",
+    "tools-d-all-releases": "Todas las versiones en GitHub \u2192",
 
     // Modal
     "modal-title": "Opciones de Descarga",
@@ -175,6 +195,7 @@ const translations = {
     "footer-links-org": "Organizaci\u00f3n en GitHub",
     "footer-links-safetoolpix": "Repo de SafeTool Pix",
     "footer-links-safetoolpdf": "Repo de SafeTool PDF",
+    "footer-links-safetooldownloader": "Repo de SafeTool Downloader",
     "footer-links-paypal": "Donar",
     "footer-rights": "SafeToolHub \u2014 Software libre y de c\u00f3digo abierto (GPLv3).",
     "footer-license": "Licenciado bajo la <a href='https://www.gnu.org/licenses/gpl-3.0.html' target='_blank'>Licencia P\u00fablica General v3 de GNU (GPLv3)</a>. Eres libre de usar, estudiar, modificar y compartir este software. Las obras derivadas deben incluir atribuci\u00f3n adecuada y estar licenciadas bajo GPLv3. C\u00f3digo fuente disponible en <a href='https://github.com/safetoolhub' target='_blank'>GitHub</a>.",
@@ -310,8 +331,11 @@ function renderBlogCards(lang) {
 // updates the version badge and sets direct download links per platform.
 
 document.addEventListener("DOMContentLoaded", () => {
-  const REPO = 'safetoolhub/safetool-pix';
-  const API_URL = `https://api.github.com/repos/${REPO}/releases/latest`;
+  const APPS = [
+    { id: 'safetoolpix', repo: 'safetoolhub/safetool-pix' },
+    { id: 'safetoolpdf', repo: 'safetoolhub/safetool-pdf' },
+    { id: 'safetooldownloader', repo: 'safetoolhub/safetool-downloader' }
+  ];
 
   // Detect user OS and highlight the recommended download button
   function highlightUserOS() {
@@ -328,40 +352,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Fetch latest release and update UI
-  function fetchRelease() {
-    fetch(API_URL)
-      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(release => {
-        // Update version badge
-        const badge = document.getElementById('safetoolpix-version');
-        if (badge && release.tag_name) {
-          const version = release.tag_name.replace(/^v/, '');
-          badge.textContent = `v${version}`;
-        }
-
-        // Map assets to download buttons by file extension
-        const assets = release.assets || [];
-        const mapping = {
-          'dl-win': a => /\.exe$/i.test(a.name),
-          'dl-deb': a => /\.deb$/i.test(a.name),
-          'dl-rpm': a => /\.rpm$/i.test(a.name),
-          'dl-mac': a => /\.dmg$/i.test(a.name),
-          'dl-appimage': a => /\.AppImage$/i.test(a.name),
-          'dl-flatpak': a => /\.flatpak$/i.test(a.name),
-        };
-
-        for (const [id, matcher] of Object.entries(mapping)) {
-          const asset = assets.find(matcher);
-          const btn = document.getElementById(id);
-          if (btn && asset) {
-            btn.href = asset.browser_download_url;
+  // Fetch latest release and update UI for all apps
+  function fetchReleases() {
+    APPS.forEach(app => {
+      const API_URL = `https://api.github.com/repos/${app.repo}/releases/latest`;
+      fetch(API_URL)
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(release => {
+          // Update version badge if it exists
+          const badge = document.getElementById(`${app.id}-version`);
+          if (badge && release.tag_name) {
+            const version = release.tag_name.replace(/^v/, '');
+            badge.textContent = `v${version}`;
           }
-        }
-      })
-      .catch(() => { /* keep fallback links pointing to releases page */ });
+
+          // Map assets to download buttons by file extension (only for Pix as it's the main reference for now)
+          // For other apps, the buttons are in the modal which is handled by downloads.js 
+          // but we can also update the hidden links for the modal to use
+          const assets = release.assets || [];
+          const mapping = {
+            'win': a => /\.exe$/i.test(a.name),
+            'deb': a => /\.deb$/i.test(a.name),
+            'rpm': a => /\.rpm$/i.test(a.name),
+            'mac': a => /\.dmg$/i.test(a.name),
+            'appimage': a => /\.AppImage$/i.test(a.name),
+            'flatpak': a => /\.flatpak$/i.test(a.name),
+          };
+
+          const card = document.querySelector(`.tool-card[data-app-id="${app.repo.split('/')[1]}"]`);
+          if (card) {
+            for (const [key, matcher] of Object.entries(mapping)) {
+              const asset = assets.find(matcher);
+              // Find the specific button in the card (using either the common IDs or app-specific ones)
+              const btn = card.querySelector(`[id$="-dl-${key}"], [id="dl-${key}"]`);
+              if (btn && asset) {
+                btn.href = asset.browser_download_url;
+              }
+            }
+          }
+        })
+        .catch(() => { /* keep fallback links */ });
+    });
   }
 
   highlightUserOS();
-  fetchRelease();
+  fetchReleases();
 });
