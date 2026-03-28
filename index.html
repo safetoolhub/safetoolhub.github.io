@@ -79,7 +79,7 @@
       <div class="tools-grid">
 
         <!-- Tool 1: SafeTool Pix -->
-        <div class="tool-card active-tool">
+        <div class="tool-card active-tool" data-app-id="safetool-pix">
           <div class="tool-header">
             <div class="tool-icon"><img
                 src="https://raw.githubusercontent.com/safetoolhub/safetool-pix/main/assets/icon.png" alt="SafeTool Pix"
@@ -99,7 +99,9 @@
           </ul>
 
           <div class="download-section" id="isafetoolpix-downloads">
-            <div class="download-grid">
+            <a href="#" class="btn btn-primary btn-download-trigger" data-app-id="safetool-pix" data-version="v0.9.9-beta" data-i18n="tools-i-btn" style="width: 100%; justify-content: center; margin-bottom: 0.5rem;">Download SafeTool Pix</a>
+            <div class="hidden-links" style="display: none;">
+              <div class="download-grid">
               <a href="https://github.com/safetoolhub/safetool-pix/releases/download/v0.9.9-beta/SafeToolPix-0.9.9-beta-windows-setup.exe"
                 class="dl-btn" id="dl-win" target="_blank" rel="noopener">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -155,11 +157,12 @@
             </div>
             <a href="https://github.com/safetoolhub/safetool-pix/releases" class="all-releases-link" target="_blank"
               rel="noopener" data-i18n="tools-i-all-releases">All releases on GitHub &rarr;</a>
+            </div>
           </div>
         </div>
 
         <!-- Tool 2: SafeTool PDF -->
-        <div class="tool-card active-tool">
+        <div class="tool-card active-tool" data-app-id="safetool-pdf">
           <div class="tool-header">
             <div class="tool-icon"><img
                 src="https://raw.githubusercontent.com/safetoolhub/safetool-pdf/main/assets/icon.png" alt="SafeTool PDF"
@@ -179,7 +182,9 @@
           </ul>
 
           <div class="download-section" id="safetool-pdf-downloads">
-            <div class="download-grid">
+            <a href="#" class="btn btn-primary btn-download-trigger" data-app-id="safetool-pdf" data-version="v0.1.0-beta" data-i18n="tools-p-btn" style="width: 100%; justify-content: center; margin-bottom: 0.5rem;">Download SafeTool PDF</a>
+            <div class="hidden-links" style="display: none;">
+              <div class="download-grid">
               <a href="https://github.com/safetoolhub/safetool-pdf/releases/download/v0.1.0-beta/SafeToolPDF-0.1.0-beta-windows-setup.exe"
                 class="dl-btn" id="pdftrim-dl-win" target="_blank" rel="noopener">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -235,6 +240,7 @@
             </div>
             <a href="https://github.com/safetoolhub/safetool-pdf/releases" class="all-releases-link" target="_blank"
               rel="noopener" data-i18n="tools-p-all-releases">All releases on GitHub &rarr;</a>
+            </div>
           </div>
         </div>
 
@@ -354,8 +360,105 @@
     </div>
   </footer>
 
+  <!-- Download Modal -->
+  <dialog id="download-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h2 data-i18n="modal-title">Download Options</h2>
+          <span class="modal-version-badge" id="modal-version">v0.0.0</span>
+        </div>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      
+      <div class="modal-tabs">
+        <button class="os-tab active" data-target="win" data-i18n="modal-win">Windows</button>
+        <button class="os-tab" data-target="mac" data-i18n="modal-mac">macOS</button>
+        <button class="os-tab" data-target="lin" data-i18n="modal-lin">Linux</button>
+      </div>
+      
+      <div class="modal-body">
+        
+        <!-- OS Windows Content -->
+        <div id="os-win" class="os-content active">
+          <div class="os-warning-box">
+            <h4 data-i18n="modal-win-warn-title">⚠️ Windows SmartScreen Warning</h4>
+            <p data-i18n="modal-win-warn-1">Since this is an indie open-source app, Windows might warn you when running the installer.</p>
+            <p data-i18n="modal-win-warn-2" style="margin-bottom: 1rem;">To install it, you can either:</p>
+            
+            <div class="instructions-steps">
+              <div class="instruction-step">
+                <p data-i18n="modal-win-opt-1" data-i18n-html><strong>Option 1:</strong> Right-click the downloaded file > Properties > Check 'Unblock' > OK.</p>
+                <img src="assets/img/unblock-windows-1.png" alt="Unblock Windows File" loading="lazy" class="instruction-img">
+              </div>
+              <hr class="instruction-divider">
+              <div class="instruction-step">
+                <p data-i18n="modal-win-opt-2" data-i18n-html><strong>Option 2:</strong> When the blue SmartScreen appears, click 'More info' and then 'Run anyway'.</p>
+                <div class="instruction-img-row">
+                  <img src="assets/img/unblock-windows-2-1.png" alt="SmartScreen step 1" loading="lazy" class="instruction-img half">
+                  <img src="assets/img/unblock-windows-2-2.png" alt="SmartScreen step 2" loading="lazy" class="instruction-img half">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OS macOS Content -->
+        <div id="os-mac" class="os-content">
+          <div class="os-warning-box" style="margin-bottom: 2rem;">
+            <p data-i18n="modal-mac-warn">⚠️ On macOS, if the app is blocked, go to Applications, right-click (or Control-click) the app and select 'Open'.</p>
+          </div>
+        </div>
+
+        <!-- OS Linux Content -->
+        <div id="os-lin" class="os-content">
+          <p style="margin-bottom: 1rem; color: var(--text-muted);">Select your preferred Linux package format below:</p>
+          <div class="linux-dl-grid">
+            <a href="#" class="dl-btn linux-btn-proxy" data-proxy="dl-appimage">
+               <span class="dl-info"><strong>AppImage</strong><small>Universal</small></span>
+            </a>
+            <a href="#" class="dl-btn linux-btn-proxy" data-proxy="dl-flatpak">
+               <span class="dl-info"><strong>Flatpak</strong><small>Flathub / local</small></span>
+            </a>
+            <a href="#" class="dl-btn linux-btn-proxy" data-proxy="dl-deb">
+               <span class="dl-info"><strong>Debian/Ubuntu</strong><small>.deb</small></span>
+            </a>
+            <a href="#" class="dl-btn linux-btn-proxy" data-proxy="dl-rpm">
+               <span class="dl-info"><strong>Fedora/SUSE</strong><small>.rpm</small></span>
+            </a>
+          </div>
+          <script>
+            // Inline proxy links since Linux has many
+            document.querySelectorAll('.linux-btn-proxy').forEach(btn => {
+              btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const proxyId = btn.getAttribute('data-proxy');
+                // find the correct pdf or pix link based on currentAppId inside .hidden-links
+                const appCard = document.querySelector(`.tool-card[data-app-id="${window.currentAppId || 'safetool-pix'}"]`);
+                if(appCard) {
+                   const realBtn = appCard.querySelector(`.hidden-links #${proxyId}, .hidden-links #pdftrim-${proxyId}`);
+                   if(realBtn && realBtn.href) {
+                     window.open(realBtn.href, '_blank');
+                   }
+                }
+              });
+            });
+          </script>
+        </div>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <a href="#" id="modal-dl-action" class="btn btn-primary btn-large-dl" target="_blank" rel="noopener">
+          <!-- Populated by JS -->
+        </a>
+      </div>
+    </div>
+  </dialog>
+
   <script src="posts/posts.js"></script>
   <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/downloads.js"></script>
 </body>
 
 </html>
