@@ -387,13 +387,15 @@
             
             <div class="instructions-steps">
               <div class="instruction-step">
-                <p data-i18n="modal-win-opt-1" data-i18n-html><strong>Option 1:</strong> Right-click the downloaded file > Properties > Check 'Unblock' > OK.</p>
-                <img src="assets/img/unblock-windows-1.png" alt="Unblock Windows File" loading="lazy" class="instruction-img">
+                <p><span data-i18n="modal-win-opt-1" data-i18n-html><strong>Option 1:</strong> Right-click the downloaded file > Properties > Check 'Unblock' > OK.</span>
+                   <a href="#" id="toggle-win-opt1" data-i18n="modal-show-where" style="margin-left: 0.5rem; color: var(--primary); text-decoration: underline; font-size: 0.9em;">Show where</a></p>
+                <img id="img-win-opt1" src="assets/img/unblock-windows-1.png" alt="Unblock Windows File" loading="lazy" class="instruction-img" style="display: none; margin-top: 1rem;">
               </div>
               <hr class="instruction-divider">
               <div class="instruction-step">
-                <p data-i18n="modal-win-opt-2" data-i18n-html><strong>Option 2:</strong> When the blue SmartScreen appears, click 'More info' and then 'Run anyway'.</p>
-                <div class="instruction-img-row">
+                <p><span data-i18n="modal-win-opt-2" data-i18n-html><strong>Option 2:</strong> When the blue SmartScreen appears, click 'More info' and then 'Run anyway'.</span>
+                   <a href="#" id="toggle-win-opt2" data-i18n="modal-show-where" style="margin-left: 0.5rem; color: var(--primary); text-decoration: underline; font-size: 0.9em;">Show where</a></p>
+                <div id="img-win-opt2" class="instruction-img-row" style="display: none; margin-top: 1rem;">
                   <img src="assets/img/unblock-windows-2-1.png" alt="SmartScreen step 1" loading="lazy" class="instruction-img half">
                   <img src="assets/img/unblock-windows-2-2.png" alt="SmartScreen step 2" loading="lazy" class="instruction-img half">
                 </div>
@@ -405,7 +407,12 @@
         <!-- OS macOS Content -->
         <div id="os-mac" class="os-content">
           <div class="os-warning-box" style="margin-bottom: 2rem;">
-            <p data-i18n="modal-mac-warn">⚠️ On macOS, if the app is blocked, go to Applications, right-click (or Control-click) the app and select 'Open'.</p>
+            <h4 data-i18n="modal-mac-warn-title">⚠️ macOS App Blocked Warning</h4>
+            <p data-i18n="modal-mac-warn-1">Since this is an indie open-source app, macOS might not let you open it normally.</p>
+            <p data-i18n="modal-mac-warn-2" style="margin-bottom: 1rem;">To open it for the first time:</p>
+            <div class="instruction-step">
+              <p data-i18n="modal-mac-warn">Go to Applications, right-click (or Control-click) the app icon and select 'Open'.</p>
+            </div>
           </div>
         </div>
 

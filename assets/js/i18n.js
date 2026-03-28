@@ -48,8 +48,12 @@ const translations = {
     "modal-win-warn-2": "To install it, you can either:",
     "modal-win-opt-1": "<strong>Option 1:</strong> Right-click the downloaded file > Properties > Check 'Unblock' > OK.",
     "modal-win-opt-2": "<strong>Option 2:</strong> When the blue SmartScreen appears, click 'More info' and then 'Run anyway'.",
-    "modal-mac-warn": "⚠️ On macOS, if the app is blocked, go to Applications, right-click (or Control-click) the app and select 'Open'.",
+    "modal-mac-warn-title": "⚠️ macOS Unverified App Warning",
+    "modal-mac-warn-1": "Since this is an indie open-source app, macOS might not let you open it normally.",
+    "modal-mac-warn-2": "To open it for the first time:",
+    "modal-mac-warn": "Go to Applications, right-click (or Control-click) the app icon and select 'Open'.",
     "modal-dl-btn": "Download for",
+    "modal-show-where": "Show where",
 
 
     // Blog Section
@@ -137,8 +141,12 @@ const translations = {
     "modal-win-warn-2": "Para instalarla, debes hacer una de estas dos opciones:",
     "modal-win-opt-1": "<strong>Opción 1:</strong> Clic derecho en el archivo descargado > Propiedades > Marcar 'Desbloquear' > Aceptar.",
     "modal-win-opt-2": "<strong>Opción 2:</strong> En la alerta azul de Windows SmartScreen, clic en 'Más información' y luego en el botón 'Ejecutar de todas formas'.",
-    "modal-mac-warn": "⚠️ En macOS, si la app se bloquea, ve a Aplicaciones, haz clic derecho (o Control-clic) en la app y selecciona 'Abrir'.",
+    "modal-mac-warn-title": "⚠️ App no verificada por macOS",
+    "modal-mac-warn-1": "Al ser una aplicación indie de código abierto (no conocida para Apple), macOS podría no dejarte abrir la aplicación de la forma normal.",
+    "modal-mac-warn-2": "Para abrirla la primera vez:",
+    "modal-mac-warn": "Ve a la carpeta Aplicaciones, haz clic derecho (o Control-clic) en el icono de la app y selecciona 'Abrir'.",
     "modal-dl-btn": "Descargar para",
+    "modal-show-where": "Ver dónde",
 
     // Blog
     "blog-title": "Nuestro Blog",
