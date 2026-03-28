@@ -178,7 +178,6 @@
             <li data-i18n="tools-p-f2">Merge multiple PDFs into one</li>
             <li data-i18n="tools-p-f3">Remove metadata from PDFs</li>
             <li data-i18n="tools-p-f4">Remove password protection (if you know it)</li>
-            <li data-i18n="tools-p-f5">100% local and private processing</li>
           </ul>
 
           <div class="download-section" id="safetool-pdf-downloads">
@@ -414,36 +413,19 @@
         <div id="os-lin" class="os-content">
           <p style="margin-bottom: 1rem; color: var(--text-muted);">Select your preferred Linux package format below:</p>
           <div class="linux-dl-grid">
-            <a href="#" class="dl-btn linux-btn-proxy" data-proxy="dl-appimage">
+            <button class="dl-btn linux-format-selector selected" data-format="dl-appimage" data-label="AppImage">
                <span class="dl-info"><strong>AppImage</strong><small>Universal</small></span>
-            </a>
-            <a href="#" class="dl-btn linux-btn-proxy" data-proxy="dl-flatpak">
+            </button>
+            <button class="dl-btn linux-format-selector" data-format="dl-flatpak" data-label="Flatpak">
                <span class="dl-info"><strong>Flatpak</strong><small>Flathub / local</small></span>
-            </a>
-            <a href="#" class="dl-btn linux-btn-proxy" data-proxy="dl-deb">
+            </button>
+            <button class="dl-btn linux-format-selector" data-format="dl-deb" data-label="Debian/Ubuntu">
                <span class="dl-info"><strong>Debian/Ubuntu</strong><small>.deb</small></span>
-            </a>
-            <a href="#" class="dl-btn linux-btn-proxy" data-proxy="dl-rpm">
+            </button>
+            <button class="dl-btn linux-format-selector" data-format="dl-rpm" data-label="Fedora/SUSE">
                <span class="dl-info"><strong>Fedora/SUSE</strong><small>.rpm</small></span>
-            </a>
+            </button>
           </div>
-          <script>
-            // Inline proxy links since Linux has many
-            document.querySelectorAll('.linux-btn-proxy').forEach(btn => {
-              btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const proxyId = btn.getAttribute('data-proxy');
-                // find the correct pdf or pix link based on currentAppId inside .hidden-links
-                const appCard = document.querySelector(`.tool-card[data-app-id="${window.currentAppId || 'safetool-pix'}"]`);
-                if(appCard) {
-                   const realBtn = appCard.querySelector(`.hidden-links #${proxyId}, .hidden-links #pdftrim-${proxyId}`);
-                   if(realBtn && realBtn.href) {
-                     window.open(realBtn.href, '_blank');
-                   }
-                }
-              });
-            });
-          </script>
         </div>
         
       </div>
