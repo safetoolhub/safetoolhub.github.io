@@ -172,6 +172,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Toggle macOS Step 4 Image
+    const toggleMacStep4 = modal.querySelector("#toggle-mac-step4");
+    if (toggleMacStep4) {
+        toggleMacStep4.addEventListener("click", (e) => {
+            e.preventDefault();
+            const img = modal.querySelector("#img-mac-step4");
+            const isSpanish = localStorage.getItem('safetoolhub_lang') === 'es';
+            if (img.style.display === "none") {
+                img.style.display = "block";
+                toggleMacStep4.textContent = isSpanish ? "Ocultar" : "Hide";
+                toggleMacStep4.removeAttribute("data-i18n");
+            } else {
+                img.style.display = "none";
+                toggleMacStep4.textContent = isSpanish ? "Ver dónde" : "Show where";
+                toggleMacStep4.setAttribute("data-i18n", "modal-show-where");
+            }
+        });
+    }
+
     // Event Listeners
     openBtns.forEach(btn => {
         btn.addEventListener("click", (e) => {

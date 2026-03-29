@@ -62,6 +62,11 @@ const translations = {
     "modal-mac-warn-1": "Since this is an indie open-source app, macOS might not let you open it normally.",
     "modal-mac-warn-2": "To open it for the first time:",
     "modal-mac-warn": "Go to Applications, right-click (or Control-click) the app icon and select 'Open'.",
+    "modal-mac-intro": "You can force the app to open by authorizing it directly from your Mac's settings.",
+    "modal-mac-step1": "<strong>1.</strong> Try to double-click the blocked file so the system registers the attempt, then close the warning window.",
+    "modal-mac-step2": "<strong>2.</strong> Click the Apple menu in the top-left corner and select <em>System Settings</em> (or <em>System Preferences</em> on older versions).",
+    "modal-mac-step3": "<strong>3.</strong> Go to <em>Privacy &amp; Security</em> and scroll down to the <em>Security</em> section.",
+    "modal-mac-step4": "<strong>4.</strong> You'll see a message indicating the file was blocked; click <em>Open Anyway</em> and enter your Mac password to confirm.",
     "modal-dl-btn": "Download for",
     "modal-show-where": "Show where",
 
@@ -165,6 +170,11 @@ const translations = {
     "modal-mac-warn-1": "Al ser una aplicación indie de código abierto (no conocida para Apple), macOS podría no dejarte abrir la aplicación de la forma normal.",
     "modal-mac-warn-2": "Para abrirla la primera vez:",
     "modal-mac-warn": "Ve a la carpeta Aplicaciones, haz clic derecho (o Control-clic) en el icono de la app y selecciona 'Abrir'.",
+    "modal-mac-intro": "Puedes forzar la apertura autorizándola directamente desde la configuración de tu Mac.",
+    "modal-mac-step1": "<strong>1.</strong> Intenta hacer doble clic en el archivo bloqueado para que el sistema registre el intento y luego cierra la ventana de advertencia.",
+    "modal-mac-step2": "<strong>2.</strong> Ve al menú Apple en la esquina superior izquierda y selecciona <em>Ajustes del Sistema</em> (o <em>Preferencias del Sistema</em> en versiones antiguas).",
+    "modal-mac-step3": "<strong>3.</strong> Entra en el apartado <em>Privacidad y seguridad</em> y desplázate hacia abajo hasta llegar a la sección de &laquo;Seguridad&raquo;.",
+    "modal-mac-step4": "<strong>4.</strong> Verás un texto indicando que se bloqueó el archivo; haz clic en el botón <em>Abrir de todos modos</em> e introduce la contraseña de tu Mac para confirmar.",
     "modal-dl-btn": "Descargar para",
     "modal-show-where": "Ver dónde",
 
