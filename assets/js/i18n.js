@@ -367,10 +367,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fetch latest release and update UI for all apps
   function fetchReleases() {
     APPS.forEach(app => {
-      const API_URL = `https://api.github.com/repos/${app.repo}/releases/latest`;
+      const API_URL = `https://api.github.com/repos/${app.repo}/releases`;
       fetch(API_URL)
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(release => {
+        .then(releases => {
+          if (!releases || releases.length === 0) return;
+          const release = releases[0]; // Get the newest release (including pre-releases)
+          
           // Update version badge if it exists
           const badge = document.getElementById(`${app.id}-version`);
           if (badge && release.tag_name) {
@@ -378,9 +381,16 @@ document.addEventListener("DOMContentLoaded", () => {
             badge.textContent = `v${version}`;
           }
 
-          // Map assets to download buttons by file extension (only for Pix as it's the main reference for now)
-          // For other apps, the buttons are in the modal which is handled by downloads.js 
-          // but we can also update the hidden links for the modal to use
+          // Update data-version on the download trigger button
+          const appIdForTrigger = app.repo.split('/')[1];
+          const triggerBtns = document.querySelectorAll(`.btn-download-trigger[data-app-id="${appIdForTrigger}"]`);
+          triggerBtns.forEach(btn => {
+            if (release.tag_name) {
+              btn.setAttribute("data-version", release.tag_name);
+            }
+          });
+
+          // Map assets to download buttons by file extension
           const assets = release.assets || [];
           const mapping = {
             'win': a => /\.exe$/i.test(a.name),
@@ -391,11 +401,11 @@ document.addEventListener("DOMContentLoaded", () => {
             'flatpak': a => /\.flatpak$/i.test(a.name),
           };
 
-          const card = document.querySelector(`.tool-card[data-app-id="${app.repo.split('/')[1]}"]`);
+          const card = document.querySelector(`.tool-card[data-app-id="${appIdForTrigger}"]`);
           if (card) {
             for (const [key, matcher] of Object.entries(mapping)) {
               const asset = assets.find(matcher);
-              // Find the specific button in the card (using either the common IDs or app-specific ones)
+              // Find the specific button in the card
               const btn = card.querySelector(`[id$="-dl-${key}"], [id="dl-${key}"]`);
               if (btn && asset) {
                 btn.href = asset.browser_download_url;
