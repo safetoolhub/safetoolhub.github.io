@@ -349,6 +349,25 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: 'safetooldownloader', repo: 'safetoolhub/safetool-downloader' }
   ];
 
+  function normalizeVersion(tag) {
+    if (!tag) return null;
+    const cleaned = tag.toString().trim().replace(/^v/i, '').replace(/[^0-9.]+/g, '.');
+    const parts = cleaned.split('.').filter(Boolean).map(part => Number(part));
+    return parts.every(Number.isFinite) ? parts : null;
+  }
+
+  function compareVersions(a, b) {
+    if (!a || !b) return 0;
+    const length = Math.max(a.length, b.length);
+    for (let i = 0; i < length; i += 1) {
+      const ai = a[i] || 0;
+      const bi = b[i] || 0;
+      if (ai > bi) return 1;
+      if (ai < bi) return -1;
+    }
+    return 0;
+  }
+
   // Detect user OS and highlight the recommended download button
   function highlightUserOS() {
     const ua = (navigator.userAgent || '').toLowerCase();
@@ -374,24 +393,31 @@ document.addEventListener("DOMContentLoaded", () => {
           if (!releases || releases.length === 0) return;
           const release = releases[0]; // Get the newest release (including pre-releases)
           
-          // Update version badge if it exists
+          // Update only if GitHub returns a newer version than the currently rendered version
           const badge = document.getElementById(`${app.id}-version`);
-          if (badge && release.tag_name) {
+          const currentBadgeVersion = badge ? normalizeVersion(badge.textContent.trim()) : null;
+          const incomingVersion = release.tag_name ? normalizeVersion(release.tag_name) : null;
+          const shouldUpdate = incomingVersion && (!currentBadgeVersion || compareVersions(incomingVersion, currentBadgeVersion) > 0);
+
+          if (badge && release.tag_name && shouldUpdate) {
             const version = release.tag_name.replace(/^v/, '');
             badge.textContent = `v${version}`;
           }
 
-          // Update data-version on the download trigger button
           const appIdForTrigger = app.repo.split('/')[1];
           const triggerBtns = document.querySelectorAll(`.btn-download-trigger[data-app-id="${appIdForTrigger}"]`);
           triggerBtns.forEach(btn => {
             if (release.tag_name) {
-              btn.setAttribute("data-version", release.tag_name);
+              const currentTriggerVersion = normalizeVersion(btn.getAttribute("data-version"));
+              if (!currentTriggerVersion || compareVersions(incomingVersion, currentTriggerVersion) > 0) {
+                btn.setAttribute("data-version", release.tag_name);
+              }
             }
           });
 
           // Map assets to download buttons by file extension
           const assets = release.assets || [];
+          if (!shouldUpdate) return;
           const mapping = {
             'win': a => /\.exe$/i.test(a.name),
             'deb': a => /\.deb$/i.test(a.name),
