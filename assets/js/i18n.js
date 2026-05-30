@@ -48,6 +48,17 @@ const translations = {
     "tools-d-f4": "Available for Linux, Windows, and macOS",
     "tools-d-btn": "Download SafeTool Downloader",
     "tools-d-all-releases": "All releases on GitHub \u2192",
+    "tools-s-badge": "v1.0.7-BETA",
+    "tools-s-title": "SafeTool Sync",
+    "tools-s-desc": "A cross-platform desktop application for mirror synchronization between disks and folders. Keep your files in sync with smart comparison, conflict resolution, and multiple sync presets.",
+    "tools-s-f1": "Multiple sync presets (Mirror Exact, Two-Way, Copy Only, and more)",
+    "tools-s-f2": "Smart comparison with SHA-256 hashing",
+    "tools-s-f3": "Conflict resolution (Source Wins, Keep Destination, Manual Review)",
+    "tools-s-f4": "Smart match for renamed files",
+    "tools-s-f5": "Trash safety & session snapshots",
+    "tools-s-f6": "Available for Linux, Windows, and macOS",
+    "tools-s-btn": "Download SafeTool Sync",
+    "tools-s-all-releases": "All releases on GitHub \u2192",
 
     // Modal
     "modal-title": "Download Options",
@@ -100,6 +111,7 @@ const translations = {
     "footer-links-safetoolpix": "SafeTool Pix Repo",
     "footer-links-safetoolpdf": "SafeTool PDF Repo",
     "footer-links-safetooldownloader": "SafeTool Downloader Repo",
+    "footer-links-safetoolsync": "SafeTool Sync Repo",
     "footer-links-paypal": "Donate",
     "footer-rights": "SafeToolHub \u2014 Free and open-source software (GPLv3).",
     "footer-license": "Licensed under the <a href='https://www.gnu.org/licenses/gpl-3.0.html' target='_blank'>GNU General Public License v3 (GPLv3)</a>. You are free to use, study, modify, and share this software. Derivative works must include proper attribution and be licensed under GPLv3. Source code available on <a href='https://github.com/safetoolhub' target='_blank'>GitHub</a>.",
@@ -157,6 +169,17 @@ const translations = {
     "tools-d-f4": "Disponible para Linux, Windows y macOS",
     "tools-d-btn": "Descargar SafeTool Downloader",
     "tools-d-all-releases": "Todas las versiones en GitHub \u2192",
+    "tools-s-badge": "v1.0.7-BETA",
+    "tools-s-title": "SafeTool Sync",
+    "tools-s-desc": "Una aplicación de escritorio multiplataforma para sincronización en espejo entre discos y carpetas. Mantén tus archivos sincronizados con comparación inteligente, resolución de conflictos y múltiples perfiles.",
+    "tools-s-f1": "Múltiples perfiles de sincronización (Espejo Exacto, Bidireccional, Solo Copia y más)",
+    "tools-s-f2": "Comparación inteligente con hash SHA-256",
+    "tools-s-f3": "Resolución de conflictos (Fuente Gana, Mantener Destino, Revisión Manual)",
+    "tools-s-f4": "Coincidencia inteligente para archivos renombrados",
+    "tools-s-f5": "Seguridad con papelera e instantáneas de sesión",
+    "tools-s-f6": "Disponible para Linux, Windows y macOS",
+    "tools-s-btn": "Descargar SafeTool Sync",
+    "tools-s-all-releases": "Todas las versiones en GitHub \u2192",
 
     // Modal
     "modal-title": "Opciones de Descarga",
@@ -208,6 +231,7 @@ const translations = {
     "footer-links-safetoolpix": "Repo de SafeTool Pix",
     "footer-links-safetoolpdf": "Repo de SafeTool PDF",
     "footer-links-safetooldownloader": "Repo de SafeTool Downloader",
+    "footer-links-safetoolsync": "Repo de SafeTool Sync",
     "footer-links-paypal": "Donar",
     "footer-rights": "SafeToolHub \u2014 Software libre y de c\u00f3digo abierto (GPLv3).",
     "footer-license": "Licenciado bajo la <a href='https://www.gnu.org/licenses/gpl-3.0.html' target='_blank'>Licencia P\u00fablica General v3 de GNU (GPLv3)</a>. Eres libre de usar, estudiar, modificar y compartir este software. Las obras derivadas deben incluir atribuci\u00f3n adecuada y estar licenciadas bajo GPLv3. C\u00f3digo fuente disponible en <a href='https://github.com/safetoolhub' target='_blank'>GitHub</a>.",
@@ -346,7 +370,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const APPS = [
     { id: 'safetoolpix', repo: 'safetoolhub/safetool-pix' },
     { id: 'safetoolpdf', repo: 'safetoolhub/safetool-pdf' },
-    { id: 'safetooldownloader', repo: 'safetoolhub/safetool-downloader' }
+    { id: 'safetooldownloader', repo: 'safetoolhub/safetool-downloader' },
+    { id: 'safetool-sync', repo: 'safetoolhub/safetool-sync' }
   ];
 
   function normalizeVersion(tag) {

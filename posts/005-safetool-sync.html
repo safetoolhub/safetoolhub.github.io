@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Introducing SafeTool Sync: Smart Folder Synchronization — SafeToolHub Blog</title>
+  <meta name="description"
+    content="SafeTool Sync is here: a free, open-source cross-platform tool for mirror synchronization between disks and folders. Smart comparison, conflict resolution, and multiple sync presets — all locally, with zero telemetry.">
+  <meta name="author" content="SafeToolHub">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/safetoolhub-icon.svg">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('sth-theme');
+      if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/img/safetoolhub-icon.svg" alt="SafeToolHub" class="nav-logo-img">
+        <span>SafeToolHub</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#tools" data-i18n="nav-tools">Our Tools</a>
+        <a href="../index.html#about" data-i18n="nav-about">About</a>
+        <a href="../blog.html" data-i18n="nav-blog">Blog</a>
+        <div class="nav-controls">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+          <div class="lang-switch">
+            <a href="#" data-switch-lang="en">EN</a>
+            <a href="#" data-switch-lang="es">ES</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Article -->
+  <main class="post-reader">
+    <div class="container container-sm">
+      <a href="../blog.html" class="back-link">&larr; <span data-i18n="post-back">Back to Blog</span></a>
+
+      <header class="post-header">
+        <div class="post-tags">
+          <span class="badge" data-lang="en">Tools</span>
+          <span class="badge" data-lang="es">Herramientas</span>
+        </div>
+        <h1 data-lang="en">Introducing SafeTool Sync: Smart Folder Synchronization</h1>
+        <h1 data-lang="es">Presentamos SafeTool Sync: sincronización inteligente de carpetas</h1>
+        <div class="post-meta">
+          <span data-lang="en">May 31, 2026 &bull; By SafeToolHub</span>
+          <span data-lang="es">31 de mayo de 2026 &bull; Por SafeToolHub</span>
+        </div>
+      </header>
+
+      <article class="post-content">
+
+        <!-- ═══════════ ENGLISH ═══════════ -->
+        <div data-lang="en">
+          <p>Today we are announcing <strong>SafeTool Sync</strong>, our third application and a new addition to the SafeToolHub family. Like everything we build, it runs 100% on your device — no internet connection, no cloud uploads, no telemetry.</p>
+
+          <p>Whether you're backing up data, mirroring a working directory, or keeping two drives in sync, SafeTool Sync provides a powerful yet simple solution.</p>
+
+          <h2>What it can do</h2>
+
+          <p>SafeTool Sync is a cross-platform desktop application for mirror synchronization between disks and folders. It offers:</p>
+
+          <ul class="features-list" style="margin-bottom: 2rem;">
+            <li><strong>Multiple sync presets:</strong> Mirror Exact, Mirror Safe, Copy Only, Mirror Hash, Two-Way Safe, Two-Way Exact, Two-Way Hash, and Custom modes.</li>
+            <li><strong>Smart comparison:</strong> Detects modified, renamed, and conflicting files using size, modification time, and SHA-256 hashing.</li>
+            <li><strong>Conflict resolution:</strong> Choose how to handle conflicts with flexible policies — Source Wins, Keep Destination, or Manual Review.</li>
+            <li><strong>Smart match:</strong> Automatically identifies files that are likely the same but with different names (e.g., <code>report.pdf</code> → <code>report_v2.pdf</code>).</li>
+            <li><strong>Verification:</strong> Full or spot-check SHA-256 verification after file operations.</li>
+            <li><strong>Trash safety:</strong> Optionally send deleted files to trash instead of permanently removing them.</li>
+            <li><strong>Snapshots:</strong> Save and resume sync states between sessions.</li>
+          </ul>
+
+          <h2>The SafeToolHub guarantee</h2>
+
+          <p>SafeTool Sync is free and open-source software, released under the GPLv3 license with attribution. You can download it, inspect the source code, modify it, and share it. There are no ads, no subscriptions, and no hidden network calls. It does not even contain networking code.</p>
+
+          <p>This is the same guarantee we made with SafeTool Pix and SafeTool PDF, and the same guarantee we will make with every tool we build: your data is yours, full stop.</p>
+
+          <h2>Try it now</h2>
+
+          <p>SafeTool Sync v1.0.7-beta is available for Linux, Windows, and macOS. Download it from the <a href="https://github.com/safetoolhub/safetool-sync/releases/tag/v1.0.7-beta" target="_blank" rel="noopener">GitHub Releases page</a>.</p>
+
+          <p>Requirements: Python 3.12+ and the <code>uv</code> package manager. To run: <code>uv sync</code> then <code>uv run python app.py</code>.</p>
+        </div>
+
+        <!-- ═══════════ ESPAÑOL ═══════════ -->
+        <div data-lang="es">
+          <p>Hoy anunciamos <strong>SafeTool Sync</strong>, nuestra tercera aplicación y una nueva incorporación a la familia SafeToolHub. Como todo lo que construimos, funciona al 100% en tu dispositivo — sin conexión a Internet, sin subir archivos a la nube, sin telemetría.</p>
+
+          <p>Ya sea que estés haciendo copias de seguridad, replicando un directorio de trabajo o manteniendo dos unidades sincronizadas, SafeTool Sync ofrece una solución potente pero sencilla.</p>
+
+          <h2>Qué puede hacer</h2>
+
+          <p>SafeTool Sync es una aplicación de escritorio multiplataforma para la sincronización en espejo entre discos y carpetas. Ofrece:</p>
+
+          <ul class="features-list" style="margin-bottom: 2rem;">
+            <li><strong>Múltiples perfiles de sincronización:</strong> Espejo Exacto, Espejo Seguro, Solo Copia, Espejo Hash, Bidireccional Seguro, Bidireccional Exacto, Bidireccional Hash y Personalizado.</li>
+            <li><strong>Comparación inteligente:</strong> Detecta archivos modificados, renombrados y en conflicto usando tamaño, fecha de modificación y hash SHA-256.</li>
+            <li><strong>Resolución de conflictos:</strong> Elige cómo manejar conflictos con políticas flexibles — Fuente Gana, Mantener Destino o Revisión Manual.</li>
+            <li><strong>Coincidencia inteligente:</strong> Identifica automáticamente archivos que probablemente son el mismo pero con nombres diferentes (ej. <code>informe.pdf</code> → <code>informe_v2.pdf</code>).</li>
+            <li><strong>Verificación:</strong> Verificación SHA-256 completa o por muestreo después de las operaciones de archivo.</li>
+            <li><strong>Seguridad con papelera:</strong> Opcionalmente envía archivos eliminados a la papelera en lugar de borrarlos permanentemente.</li>
+            <li><strong>Instantáneas:</strong> Guarda y reanuda estados de sincronización entre sesiones.</li>
+          </ul>
+
+          <h2>La garantía SafeToolHub</h2>
+
+          <p>SafeTool Sync es software libre y de código abierto, publicado bajo la licencia GPLv3 con atribución. Puedes descargarlo, inspeccionar el código fuente, modificarlo y compartirlo. No hay anuncios, no hay suscripciones y no hay llamadas de red ocultas. Ni siquiera contiene código de red.</p>
+
+          <p>Es la misma garantía que dimos con SafeTool Pix y SafeTool PDF, y la misma garantía que daremos con cada herramienta que construyamos: tus datos son tuyos, sin excepciones.</p>
+
+          <h2>Pruébalo ahora</h2>
+
+          <p>SafeTool Sync v1.0.7-beta está disponible para Linux, Windows y macOS. Descárgalo desde la <a href="https://github.com/safetoolhub/safetool-sync/releases/tag/v1.0.7-beta" target="_blank" rel="noopener">página de GitHub Releases</a>.</p>
+
+          <p>Requisitos: Python 3.12+ y el gestor de paquetes <code>uv</code>. Para ejecutar: <code>uv sync</code> y luego <code>uv run python app.py</code>.</p>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>SafeToolHub</h4>
+          <p data-i18n="footer-main-desc">Free and open-source software for everyone.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer-tools-title">Tools</h4>
+          <a href="../index.html#tools" data-i18n="tools-i-title">SafeTool Pix</a>
+          <a href="../index.html#tools" data-i18n="tools-p-title">SafeTool PDF</a>
+          <a href="../index.html#tools" data-i18n="tools-s-title">SafeTool Sync</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer-links-title">Links</h4>
+          <a href="https://github.com/safetoolhub" data-i18n="footer-links-org">GitHub Organization</a>
+          <a href="https://github.com/safetoolhub/safetool-pix" data-i18n="footer-links-safetoolpix">SafeTool Pix Repo</a>
+          <a href="https://github.com/safetoolhub/safetool-pdf" data-i18n="footer-links-safetoolpdf">SafeTool PDF Repo</a>
+          <a href="https://github.com/safetoolhub/safetool-sync" data-i18n="footer-links-safetoolsync">SafeTool Sync Repo</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer-rights">SafeToolHub — Free and open-source software (GPLv3).</p>
+        <p class="license-info" data-i18n="footer-license" data-i18n-html>
+          Licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU General Public
+            License v3 (GPLv3)</a>. You are free to use, study, modify, and share this software.
+          Source code available on <a href="https://github.com/safetoolhub" target="_blank">GitHub</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/i18n.js"></script>
+</body>
+
+</html>

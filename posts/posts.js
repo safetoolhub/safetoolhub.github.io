@@ -4,6 +4,30 @@
 
 const BLOG_POSTS = [
   {
+    slug: "005-safetool-sync",
+    date: "2026-05-31",
+    date_display: {
+      en: "May 31, 2026",
+      es: "31 de mayo de 2026"
+    },
+    tag: {
+      en: "Tools",
+      es: "Herramientas"
+    },
+    title: {
+      en: "Introducing SafeTool Sync: Smart Folder Synchronization",
+      es: "Presentamos SafeTool Sync: sincronización inteligente de carpetas"
+    },
+    description: {
+      en: "SafeTool Sync is here: a free, open-source cross-platform tool for mirror synchronization between disks and folders. Smart comparison, conflict resolution, and multiple sync presets \u2014 all locally, with zero telemetry.",
+      es: "SafeTool Sync ya est\u00e1 aqu\u00ed: una herramienta gratuita y de c\u00f3digo abierto multiplataforma para sincronizaci\u00f3n en espejo entre discos y carpetas. Comparaci\u00f3n inteligente, resoluci\u00f3n de conflictos y m\u00faltiples perfiles \u2014 todo localmente, sin telemetr\u00eda."
+    },
+    author: {
+      en: "By SafeToolHub",
+      es: "Por SafeToolHub"
+    }
+  },
+  {
     slug: "004-safetool-pdf",
     date: "2026-03-13",
     date_display: {
